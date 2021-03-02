@@ -12,3 +12,7 @@ class HTTPException(VirtualCryptoException):
 
 class BadRequest(HTTPException):
     pass
+
+
+class NotFound(HTTPException):
+    pass
