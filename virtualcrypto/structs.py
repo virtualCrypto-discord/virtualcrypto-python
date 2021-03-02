@@ -1,5 +1,6 @@
 from dataclasses import dataclass
 from enum import Enum
+from requests import Response
 
 
 class ClaimStatus(Enum):
@@ -7,6 +8,11 @@ class ClaimStatus(Enum):
     Approved = "approved"
     Canceled = "canceled"
     Denied = "denied"
+
+
+class Scope(Enum):
+    Pay = "vc.pay"
+    Claim = "vc.claim"
 
 
 @dataclass
@@ -24,7 +30,8 @@ class Currency:
     total_amount: int
 
     @classmethod
-    def by_json(cls, data: dict):
+    def by_response(cls, response: Response):
+        data = response.json()
         if 'error' in data.keys():
             return None
 

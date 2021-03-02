@@ -1,5 +1,6 @@
 """Top-level package for VirtualCrypto.py."""
-from .structs import User, Currency, Claim, ClaimStatus
+from .structs import User, Currency, Claim, ClaimStatus, Scope
+from .errors import VirtualCryptoException, MissingScope
 from .client import VirtualCryptoClient
 
 __author__ = """sizumita"""
