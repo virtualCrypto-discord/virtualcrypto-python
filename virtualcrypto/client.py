@@ -4,7 +4,7 @@ from .structs import Currency, Scope, Claim, ClaimStatus
 from .errors import MissingScope, BadRequest, NotFound
 from typing import Optional, List
 import datetime
-VIRTUALCRYPTO_ENDPOINT = "http://localhost"
+VIRTUALCRYPTO_ENDPOINT = "https://vcrypto.sumidora.com"
 VIRTUALCRYPTO_API = VIRTUALCRYPTO_ENDPOINT + "/api/v1"
 VIRTUALCRYPTO_TOKEN_ENDPOINT = VIRTUALCRYPTO_ENDPOINT + "/oauth2/token"
 
