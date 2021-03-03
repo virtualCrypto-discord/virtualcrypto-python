@@ -6,3 +6,8 @@ History
 ------------------
 
 * First release on PyPI.
+
+0.1.0 (2021-03-3)
+------------------
+
+* Create VirtualCrypto Client
