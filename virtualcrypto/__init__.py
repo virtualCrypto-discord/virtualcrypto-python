@@ -6,4 +6,4 @@ from .async_client import AsyncVirtualCryptoClient
 
 __author__ = """sizumita"""
 __email__ = 'contact@sumidora.com'
-__version__ = '0.1.0'
+__version__ = '0.1.1'
