@@ -1,6 +1,6 @@
 """Top-level package for VirtualCrypto.py."""
-from .structs import User, Currency, Claim, ClaimStatus, Scope
-from .errors import VirtualCryptoException, MissingScope
+from .structs import User, Currency, Claim, ClaimStatus, Scope, Balance
+from .errors import VirtualCryptoException, MissingScope, BadRequest
 from .client import VirtualCryptoClient
 from .async_client import AsyncVirtualCryptoClient
 

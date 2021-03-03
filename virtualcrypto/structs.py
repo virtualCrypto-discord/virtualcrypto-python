@@ -107,3 +107,16 @@ class Claim:
 
     def cancel(self, client):
         return client.update_claim(self.id, ClaimStatus.Canceled)
+
+
+@dataclass
+class Balance:
+    amount: int
+    currency: Currency
+
+    @classmethod
+    def by_json(cls, data):
+        return cls(
+            amount=int(data['amount']),
+            currency=Currency.by_json(data['currency'])
+        )

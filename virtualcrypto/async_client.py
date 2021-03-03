@@ -1,4 +1,4 @@
-from .structs import Currency, Scope, Claim, ClaimStatus
+from .structs import Currency, Scope, Claim, ClaimStatus, Balance
 from .errors import MissingScope, BadRequest, NotFound
 from .client import VirtualCryptoClientBase, VIRTUALCRYPTO_TOKEN_ENDPOINT, VIRTUALCRYPTO_API
 from typing import Optional, List
@@ -125,3 +125,10 @@ class AsyncVirtualCryptoClient(VirtualCryptoClientBase):
             raise BadRequest((await response.json())["error_info"])
 
         return response
+
+    async def get_balances(self):
+        response = await self.get(
+            "/users/@me/balances",
+            {}
+        )
+        return list(map(Balance.by_json, await response.json()))

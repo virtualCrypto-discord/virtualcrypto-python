@@ -1,6 +1,6 @@
 from requests.auth import HTTPBasicAuth
 import requests
-from .structs import Currency, Scope, Claim, ClaimStatus
+from .structs import Currency, Scope, Claim, ClaimStatus, Balance
 from .errors import MissingScope, BadRequest, NotFound
 from typing import Optional, List
 import datetime
@@ -70,7 +70,7 @@ class VirtualCryptoClientBase:
         """
         pass
 
-    def get_currency_by_id(self, currency_id: int):
+    def get_currency(self, currency_id: int):
         r"""
 
         Get Currency information by it's id
@@ -131,6 +131,14 @@ class VirtualCryptoClientBase:
             The chaim id
         status: :class:`.ClaimStatus`
             The status you want to change. You can use Approved, Canceled and Denied.
+        """
+        pass
+
+    def get_balances(self):
+        """
+
+        Get all balances
+
         """
         pass
 
@@ -246,3 +254,10 @@ class VirtualCryptoClient(VirtualCryptoClientBase):
             raise BadRequest(response.json()["error_info"])
 
         return response
+
+    def get_balances(self):
+        response = self.get(
+            "/users/@me/balances",
+            {}
+        )
+        return list(map(Balance.by_json, response.json()))
