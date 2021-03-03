@@ -35,27 +35,103 @@ class VirtualCryptoClientBase:
         pass
 
     def get_currency_by_unit(self, unit: str):
+        """
+
+        Get Currency information by it's unit
+
+        Parameters
+        ----------
+        unit: :class:`str`
+            The currency's unit
+        """
         pass
 
     def get_currency_by_guild(self, guild_id: int):
+        """
+
+        Get Currency information by it's guild
+
+        Parameters
+        ----------
+        guild_id: :class:`int`
+            The currency's guild id
+        """
         pass
 
     def get_currency_by_name(self, name: str):
+        """
+
+        Get Currency information by it's name
+
+        Parameters
+        ----------
+        name: :class:`str`
+            The currency's unit
+        """
         pass
 
     def get_currency_by_id(self, currency_id: int):
+        r"""
+
+        Get Currency information by it's id
+
+        Parameters
+        ----------
+        currency_id: :class:`int`
+            The currency's id
+        """
         pass
 
     def create_user_transaction(self, unit: str, receiver_discord_id: int, amount: int):
+        """
+
+        Pay currency for another user.
+
+        Parameters
+        ----------
+        unit: :class:`str`
+            The currency's unit
+        receiver_discord_id: :class:`int`
+            Who gets currencies
+        amount: :class:`int`
+            The currency's amount
+        """
         pass
 
     def get_claims(self):
+        """
+
+        Get **pending** claims
+        You can get both you send and received claims.
+
+        """
         pass
 
     def get_claim(self, claim_id: int):
+        """
+
+        Get claim by id
+
+        Parameters
+        ----------
+        claim_id: :class:`int`
+            The getting claim id
+
+        """
         pass
 
     def update_claim(self, claim_id: int, status: ClaimStatus):
+        """
+
+        Update Claim status
+
+        Parameters
+        ----------
+        claim_id: :class:`int`
+            The chaim id
+        status: :class:`.ClaimStatus`
+            The status you want to change. You can use Approved, Canceled and Denied.
+        """
         pass
 
 
