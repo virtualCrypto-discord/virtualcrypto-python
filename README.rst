@@ -25,7 +25,9 @@ VirtualCrypto Python SDK
 Usage
 -----
 
-Normal Usage::
+Normal Usage:
+
+.. highlight:: python
 
     from virtualcrypto import VirtualCryptoClient, Scope
     client = VirtualCryptoClient(
@@ -36,7 +38,9 @@ Normal Usage::
     print(client.get_currency_by_unit("v"))
     # Currency(unit='v', guild=754191887203696731, name='vcoin', pool_amount=5000, total_amount=1000000)
 
-For asyncio::
+For asyncio:
+
+.. highlight:: python
 
     from virtualcrypto import Scope, AsyncVirtualCryptoClient
     import asyncio
