@@ -27,7 +27,7 @@ Usage
 
 Normal Usage:
 
-.. highlight:: python
+.. code-block:: python
 
     from virtualcrypto import VirtualCryptoClient, Scope
     client = VirtualCryptoClient(
@@ -40,7 +40,7 @@ Normal Usage:
 
 For asyncio:
 
-.. highlight:: python
+.. code-block:: python
 
     from virtualcrypto import Scope, AsyncVirtualCryptoClient
     import asyncio
